@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: Sider Aledo
   productName: Jam_SaulGoodman
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -860,8 +860,8 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Jam_SaulGoodman
-  metroPackageVersion: 
+  metroPackageName: JamSaulGoodman
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -869,7 +869,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Jam_SaulGoodman
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Jam_SaulGoodman
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
