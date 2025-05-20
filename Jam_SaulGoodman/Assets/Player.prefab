@@ -456,7 +456,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  Speed: 5
+  speed: 5
+  acceleration: 2
+  deceleration: 1.5
 --- !u!1 &4846324465521390993
 GameObject:
   m_ObjectHideFlags: 0

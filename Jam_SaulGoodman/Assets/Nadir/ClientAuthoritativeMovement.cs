@@ -26,8 +26,17 @@ namespace Unity.Multiplayer.Center.NetcodeForGameObjectsExample
             }
             else if (currentAcceleration != 0)
             {
-                currentAcceleration -= Time.deltaTime * deceleration;
-                if (currentAcceleration < 0) currentAcceleration = 0;
+                if (currentAcceleration > 0)
+                {
+                    currentAcceleration -= Time.deltaTime * deceleration;
+                    if (currentAcceleration < 0) currentAcceleration = 0;
+                }
+                //a
+                else if (currentAcceleration < 0)
+                {
+                    currentAcceleration += Time.deltaTime * deceleration;
+                    if (currentAcceleration > 0) currentAcceleration = 0;
+                }
             }
             var multiplier = currentAcceleration * speed * Time.deltaTime;
             transform.position += new Vector3(multiplier, 0, 0);
