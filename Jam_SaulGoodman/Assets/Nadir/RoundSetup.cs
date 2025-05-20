@@ -6,9 +6,9 @@ using System;
 public class RoundSetup : NetworkBehaviour
 {
     public static RoundSetup Instance;
-    
+
     [Header("People and places")]
-    [SerializeField]public GameObject[] initialPeople;
+    [SerializeField] public GameObject[] initialPeople;
     [SerializeField] public GameObject[] initialPlaces;
     [SerializeField] public GameObject[][] initialPlacesSpawnpoints;
 
@@ -28,7 +28,9 @@ public class RoundSetup : NetworkBehaviour
 
     [Header("Whitnesses")]
     [SerializeField] public Range whitnessesCount = new Range(6, 10);
-    [System.Serializable]public class Range{
+    [System.Serializable]
+    public class Range
+    {
         public int min;
         public int max;
 
@@ -42,7 +44,7 @@ public class RoundSetup : NetworkBehaviour
 
     private void Awake()
     {
-        
+
     }
     public override void OnNetworkSpawn()
     {
@@ -75,7 +77,7 @@ public class RoundSetup : NetworkBehaviour
     {
         //pick the clients
         List<GameObject> clientPrefabsList = new List<GameObject>(clientPrefabs);
-        
+
         int choice1 = UnityEngine.Random.Range(0, clientPrefabsList.Count);
         clients[0] = clientPrefabsList[choice1];
         clientPrefabsList.RemoveAt(choice1);
@@ -87,13 +89,13 @@ public class RoundSetup : NetworkBehaviour
     public void SpreadNpcs()
     {
         List<GameObject> initialPeopleList = new List<GameObject>(initialPeople);
-        
+
         while (initialPeopleList.Count > 0)
         {
             for (int i = 0; i < initialPlaces.Length; i++)
             {
                 if (initialPeopleList.Count == 0)
-                break;
+                    break;
 
                 int randGen = UnityEngine.Random.Range(0, initialPeopleList.Count);
                 PeopleInPlaces[i].Add(initialPeopleList[randGen]);
@@ -109,10 +111,10 @@ public class RoundSetup : NetworkBehaviour
             availableLocationsIndexes0.Add(i);
         }
 
-        for (int i= 0; i < whitnessesLocationCount; i++)
+        for (int i = 0; i < whitnessesLocationCount; i++)
         {
             int randGen = UnityEngine.Random.Range(0, availableLocationsIndexes0.Count);
-            int locationIndex =  availableLocationsIndexes0[randGen];
+            int locationIndex = availableLocationsIndexes0[randGen];
             availableLocationsIndexes0.RemoveAt(randGen);
             WhitnessLocation[0].Add(locationIndex);
         }
@@ -123,50 +125,33 @@ public class RoundSetup : NetworkBehaviour
             availableLocationsIndexes1.Add(i);
         }
 
-        for (int i= 0; i < whitnessesLocationCount; i++)
+        for (int i = 0; i < whitnessesLocationCount; i++)
         {
             int randGen = UnityEngine.Random.Range(0, availableLocationsIndexes1.Count);
-            int locationIndex =  availableLocationsIndexes1[randGen];
+            int locationIndex = availableLocationsIndexes1[randGen];
             availableLocationsIndexes1.RemoveAt(randGen);
             WhitnessLocation[1].Add(locationIndex);
         }
     }
     public void PickWhitnesses()
     {
-        
         //pick the whitnesses
         Whitnesses[0] = new List<GameObject>();
         int witCount0 = UnityEngine.Random.Range(whitnessesCount.min, whitnessesCount.max);
         Whitnesses[1] = new List<GameObject>();
         int witCount1 = UnityEngine.Random.Range(whitnessesCount.min, whitnessesCount.max);
 
-        //List<GameObject>[] peopleInChosenLocations0 = new List<GameObject>[whitnessesLocationCount];
-        for (int i = 0; i < whitnessesLocationCount; i ++)
+        while (whitnessesCount[0].Count < witCount0)
         {
-            for (int j = 0; j < WhitnessLocation[0].Count; j++)
+            for (int i = 0; i < WhitnessLocation[0]; i++)
             {
-                Whitnesses[0].Add(PeopleInPlaces[WhitnessLocation[0][i]][UnityEngine.Random.Range(0, PeopleInPlaces[WhitnessLocation[0][i]].Count)]);
-            }
-        }
-        //List<GameObject>[] peopleInChosenLocations1 = new List<GameObject>[whitnessesLocationCount];
-        for (int i = 0; i < whitnessesLocationCount; i ++)
-        {
-            for (int j = 0; j < WhitnessLocation[1].Count; j++)
-            {
-                Whitnesses[1].Add(PeopleInPlaces[WhitnessLocation[1][i]][UnityEngine.Random.Range(0, PeopleInPlaces[WhitnessLocation[1][i]].Count)]);
-            }
-        }
+                if (whitnessesCount[0] == witCount0)
+                    break;
+                
+                whitnessesCount.Add(PeopleInPlaces[WhitnessLocation[0][i]][UnityEngine.Random.Range()])
 
-        List<GameObject>[] PeopleInPlacesList0 = new List<GameObject>[PeopleInPlaces.Length];
-        for (int i = 0; i < witCount0; i++)
-        {
-            PeopleInPlacesList0[i] = new List<GameObject>(PeopleInPlaces[i]);
+            }
         }
-        List<GameObject>[] PeopleInPlacesList1 = new List<GameObject>[PeopleInPlaces.Length];
-        for (int i = 0; i < witCount1; i++)
-        {
-            PeopleInPlacesList1[i] = new List<GameObject>(PeopleInPlaces[i]);
-        }   
+            
     }
-    
 }
