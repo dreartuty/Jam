@@ -169,7 +169,7 @@ public class RoundSetup : NetworkBehaviour
                 PeopleInPlacesList[WhitnessLocation[0][i]].RemoveAt(randInt);
             }
         }
-        
+
         while (Whitnesses[1].Count < witCount1)
         {
             int totalAvailable = 0;
