@@ -141,17 +141,56 @@ public class RoundSetup : NetworkBehaviour
         Whitnesses[1] = new List<GameObject>();
         int witCount1 = UnityEngine.Random.Range(whitnessesCount.min, whitnessesCount.max);
 
-        while (whitnessesCount[0].Count < witCount0)
+        List<GameObject>[] PeopleInPlacesList = new List<GameObject>[initialPlaces.Length];
+        for (int i = 0; i < PeopleInPlacesList.Length; i++)
         {
-            for (int i = 0; i < WhitnessLocation[0]; i++)
-            {
-                if (whitnessesCount[0] == witCount0)
-                    break;
-                
-                whitnessesCount.Add(PeopleInPlaces[WhitnessLocation[0][i]][UnityEngine.Random.Range()])
+            PeopleInPlacesList[i] = new List<GameObject>(PeopleInPlaces[i]);
+        }
 
+        while (Whitnesses[0].Count < witCount0)
+        {
+            int totalAvailable = 0;
+            foreach (var list in PeopleInPlacesList)
+                totalAvailable += list.Count;
+
+            if (totalAvailable == 0)
+                break;
+
+            for (int i = 0; i < WhitnessLocation[0].Count; i++)
+            {
+
+                if (Whitnesses[0].Count == witCount0)
+                    break;
+                if (PeopleInPlacesList[WhitnessLocation[0][i]].Count == 0)
+                    continue;
+
+                int randInt = UnityEngine.Random.Range(0, PeopleInPlacesList[WhitnessLocation[0][i]].Count);
+                Whitnesses[0].Add(PeopleInPlacesList[WhitnessLocation[0][i]][randInt]);
+                PeopleInPlacesList[WhitnessLocation[0][i]].RemoveAt(randInt);
             }
         }
-            
+        
+        while (Whitnesses[1].Count < witCount1)
+        {
+            int totalAvailable = 0;
+            foreach (var list in PeopleInPlacesList)
+                totalAvailable += list.Count;
+
+            if (totalAvailable == 0)
+                break;
+
+            for (int i = 0; i < WhitnessLocation[1].Count; i++)
+            {
+
+                if (Whitnesses[1].Count == witCount1)
+                    break;
+                if (PeopleInPlacesList[WhitnessLocation[1][i]].Count == 0)
+                    continue;
+
+                int randInt = UnityEngine.Random.Range(0, PeopleInPlacesList[WhitnessLocation[1][i]].Count);
+                Whitnesses[1].Add(PeopleInPlacesList[WhitnessLocation[1][i]][randInt]);
+                PeopleInPlacesList[WhitnessLocation[1][i]].RemoveAt(randInt);
+            }
+        }
     }
 }
