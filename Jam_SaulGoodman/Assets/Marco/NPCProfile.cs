@@ -5,6 +5,9 @@ public class NPCProfile : ScriptableObject
 {
     public enum Whitness{player0, player1, none}
     public Whitness CrimeKnowledge;
+
+    public enum LifeState{Alive, Dead}
+    public LifeState lifeState;
     public string npcName;
     public RenderTexture portrait; //(poate nu folosim ca oricum i-se vede fata)
     public Color nameColor;

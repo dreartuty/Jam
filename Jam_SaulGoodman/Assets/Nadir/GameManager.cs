@@ -9,7 +9,7 @@ public class GameManager : NetworkBehaviour
     public enum GameState {InRound, NotInRound}
     public NetworkVariable<int> player1Score = new NetworkVariable<int>();
     public NetworkVariable<int> player2Score = new NetworkVariable<int>();
-    private bool isInLobby = true;
+    public bool isInLobby = true;
 
     public int InitialScore = 10; 
 
@@ -49,8 +49,13 @@ public class GameManager : NetworkBehaviour
     }
     public void SetupMatch()
     {
+        if (!IsSessionOwner && IsServer)
+        {
+            return;
+        }
         player1Score.Value = InitialScore;
         player2Score.Value = InitialScore;
+        StartRound();
     }
     public void StartRound()
     {
