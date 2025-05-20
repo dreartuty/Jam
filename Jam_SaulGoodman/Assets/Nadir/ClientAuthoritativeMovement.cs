@@ -8,39 +8,29 @@ namespace Unity.Multiplayer.Center.NetcodeForGameObjectsExample
 {
     public class ClientAuthoritativeMovement : NetworkBehaviour
     {
-        public float Speed = 5;
+        public float speed = 5;
+        public float acceleration = 2;
+        public float deceleration = 4;
+        private float currentAcceleration;
 
         void Update()
         {
 
             if (!IsOwner || !IsSpawned) return;
 
-            var multiplier = Speed * Time.deltaTime * Input.GetAxisRaw("Horizontal");
+            if (Input.GetAxisRaw("Horizontal") != 0)
+            {
+                currentAcceleration += Time.deltaTime * acceleration * Input.GetAxisRaw("Horizontal");
+                if (currentAcceleration > 1) currentAcceleration = 1;
+                else if (currentAcceleration < -1) currentAcceleration = -1;
+            }
+            else if (currentAcceleration != 0)
+            {
+                currentAcceleration -= Time.deltaTime * deceleration;
+                if (currentAcceleration < 0) currentAcceleration = 0;
+            }
+            var multiplier = currentAcceleration * speed * Time.deltaTime;
             transform.position += new Vector3(multiplier, 0, 0);
-
-
-/*#if ENABLE_INPUT_SYSTEM && NEW_INPUT_SYSTEM_INSTALLED
-            // New input system backends are enabled.
-            if (Keyboard.current.aKey.isPressed)
-            {
-                transform.position += new Vector3(-multiplier, 0, 0);
-            }
-            else if (Keyboard.current.dKey.isPressed)
-            {
-                transform.position += new Vector3(multiplier, 0, 0);
-            }
-#else
-            // Old input backends are enabled.
-            if (Input.GetKey(KeyCode.A))
-            {
-                transform.position += new Vector3(-multiplier, 0, 0);
-            }
-            else if(Input.GetKey(KeyCode.D))
-            {
-                transform.position += new Vector3(multiplier, 0, 0);
-            }
-
-#endif*/
         }
     }
 }
