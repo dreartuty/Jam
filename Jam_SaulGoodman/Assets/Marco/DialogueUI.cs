@@ -6,11 +6,11 @@ using TMPro;
 public class DialogueUI : MonoBehaviour
 {
     public GameObject panel;
-    public Image portraitImage;
+    public RawImage portraitImage;
     public TMP_Text nameText;
     public TMP_Text dialogueText;
 
-    private Dialogue currentDialogue; // The current Dialogue being shown
+    public Dialogue currentDialogue; // The current Dialogue being shown
     private int currentLine; // The index of the current line to be shown
 
     //Trigger function for the start of an interaction with an NPC
@@ -36,7 +36,7 @@ public class DialogueUI : MonoBehaviour
         var line = currentDialogue.lines[currentLine];
         nameText.text = currentDialogue.profile.npcName;
         nameText.color = currentDialogue.profile.nameColor;
-        portraitImage.sprite = currentDialogue.profile.portrait;
+        portraitImage.texture = currentDialogue.profile.portrait;
         dialogueText.text = line.line;
 
 

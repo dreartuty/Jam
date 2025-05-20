@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Dialogue", menuName = "Scriptable Objects/Dialogue")]
+[CreateAssetMenu(fileName = "Dialogue", menuName = "Dialogue/Dialogue")]
 
 // a full dialogue sequence held by an NPC
 public class Dialogue : ScriptableObject

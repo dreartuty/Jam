@@ -99,6 +99,7 @@ public class RoundSetup : NetworkBehaviour
 
                 int randGen = UnityEngine.Random.Range(0, initialPeopleList.Count);
                 PeopleInPlaces[i].Add(initialPeopleList[randGen]);
+                Instantiate(initialPeopleList[randGen], initialPlacesSpawnpoints[i][PeopleInPlaces[i].Count].transform.position, Quaternion.identity);
                 initialPeopleList.RemoveAt(randGen);
             }
         }
@@ -166,6 +167,7 @@ public class RoundSetup : NetworkBehaviour
 
                 int randInt = UnityEngine.Random.Range(0, PeopleInPlacesList[WhitnessLocation[0][i]].Count);
                 Whitnesses[0].Add(PeopleInPlacesList[WhitnessLocation[0][i]][randInt]);
+                PeopleInPlacesList[WhitnessLocation[0][i]][randInt].GetComponent<NPCProfile>().CrimeKnowledge = NPCProfile.Whitness.player0;
                 PeopleInPlacesList[WhitnessLocation[0][i]].RemoveAt(randInt);
             }
         }
@@ -189,8 +191,10 @@ public class RoundSetup : NetworkBehaviour
 
                 int randInt = UnityEngine.Random.Range(0, PeopleInPlacesList[WhitnessLocation[1][i]].Count);
                 Whitnesses[1].Add(PeopleInPlacesList[WhitnessLocation[1][i]][randInt]);
+                PeopleInPlacesList[WhitnessLocation[1][i]][randInt].GetComponent<NPCProfile>().CrimeKnowledge = NPCProfile.Whitness.player1;
                 PeopleInPlacesList[WhitnessLocation[1][i]].RemoveAt(randInt);
             }
         }
     }
+
 }
