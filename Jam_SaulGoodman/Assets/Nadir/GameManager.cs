@@ -1,11 +1,15 @@
 using UnityEngine;
 using Unity.Netcode;
-
-
+using UnityEngine.SceneManagement;
+using Unity.Services.Multiplayer;
 
 public class GameManager : NetworkBehaviour
 {
     public static GameManager Instance;
+    public ulong player1Id;
+    public ulong player2Id;
+    public ISession session;
+
     public enum GameState { InRound, NotInRound }
     public enum RoundState { Setup, InPrepPhase, InSearchPhase, InCourtPhase, InEndPhase }
 
@@ -33,10 +37,6 @@ public class GameManager : NetworkBehaviour
     }
     public void OnSessionOwnerPromoted(ulong sessionOwnerId)
     {
-        if (!IsSessionOwner)
-        {
-            return;
-        }
         Instance = this;
     }
 
@@ -55,32 +55,36 @@ public class GameManager : NetworkBehaviour
                 SetupMatch();
             }
         }
-        if (timerIsRunning)
+        if (!isInLobby && NetworkManager.Singleton.ConnectedClients.Count < 2)
         {
-            if (timeRemaining > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-                //DisplayTime(timeRemaining);
-            }
-            else
-            {
-                Debug.Log("Time's up!");
-                timeRemaining = 0;
-                timerIsRunning = false;
-                if (currentState == RoundState.InPrepPhase)
-                {
-                    currentState = RoundState.InSearchPhase;
-                    StartSearchPhase();
-                    return;
-                }
-                if (currentState == RoundState.InSearchPhase)
-                {
-                    currentState = RoundState.InCourtPhase;
-                    StartCourtPhase();
-                    return;
-                }
-            }
+            ReturnToLobby();
         }
+        if (timerIsRunning)
+            {
+                if (timeRemaining > 0)
+                {
+                    timeRemaining -= Time.deltaTime;
+                    //DisplayTime(timeRemaining);
+                }
+                else
+                {
+                    Debug.Log("Time's up!");
+                    timeRemaining = 0;
+                    timerIsRunning = false;
+                    if (currentState == RoundState.InPrepPhase)
+                    {
+                        currentState = RoundState.InSearchPhase;
+                        StartSearchPhase();
+                        return;
+                    }
+                    if (currentState == RoundState.InSearchPhase)
+                    {
+                        currentState = RoundState.InCourtPhase;
+                        StartCourtPhase();
+                        return;
+                    }
+                }
+            }
     }
     public void SetupMatch()
     {
@@ -88,6 +92,7 @@ public class GameManager : NetworkBehaviour
         {
             return;
         }
+        AssignPlayers();
         player1Score.Value = InitialScore;
         player2Score.Value = InitialScore;
         StartRound();
@@ -118,7 +123,7 @@ public class GameManager : NetworkBehaviour
         timeRemaining = searchPhaseDuration;
         timerIsRunning = true;
         currentState = RoundState.InSearchPhase;
-        
+
     }
     public void StartCourtPhase()
     {
@@ -128,5 +133,52 @@ public class GameManager : NetworkBehaviour
         }
         currentState = RoundState.InCourtPhase;
         timerIsRunning = false;
+
+        //start the court phase
+    }
+
+    public void AssignPlayers()
+    {
+        if (!IsSessionOwner)
+        {
+            return;
+        }
+        // Assign players based on the connected clients
+        var clients = NetworkManager.Singleton.ConnectedClientsList;
+        if (clients.Count == 2)
+        {
+            player1Id = clients[0].ClientId;
+            player2Id = clients[1].ClientId;
+            Debug.Log($"Player 1 is {player1Id}, Player 2 is {player2Id}");
+        }
+    }
+    
+    public ulong GetPlayer1Id()
+    {
+        return player1Id;
+    }
+
+    public ulong GetPlayer2Id()
+    {
+        return player2Id;
+    }   
+    public void ReturnToLobby()
+    {
+        if (!IsSessionOwner)
+            return;
+
+        isInLobby = true;
+        currentState = RoundState.Setup;
+        player1Score.Value = 0;
+        player2Score.Value = 0;
+        timeRemaining = 0;
+        timerIsRunning = false;
+
+        // Shutdown network and destroy the NetworkManager manually
+        NetworkManager.Singleton.Shutdown();
+        Destroy(NetworkManager.Singleton.gameObject);
+
+        // Now load the lobby scene (index 0)
+        SceneManager.LoadScene(0);
     }
 }
