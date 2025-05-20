@@ -2,6 +2,7 @@ using UnityEngine;
 using Unity.Netcode;
 using System.Collections.Generic;
 using System;
+using Unity.VisualScripting;
 
 public class RoundSetup : NetworkBehaviour
 {
@@ -49,6 +50,7 @@ public class RoundSetup : NetworkBehaviour
     public List<GameObject> Whitnesses0 = new List<GameObject>();
     public List<GameObject> Whitnesses1 = new List<GameObject>();
 
+
     private void Awake()
     {
 
@@ -77,7 +79,9 @@ public class RoundSetup : NetworkBehaviour
         SpreadNpcs();
         PickWhitnessesLocations();
         PickWhitnesses();
+        SetupOver();
     }
+    #region setup
     public void PickClients()
     {
         //pick the clients
@@ -110,7 +114,7 @@ public class RoundSetup : NetworkBehaviour
                 if (PeopleInPlaces[i] == null)
                     PeopleInPlaces[i] = new List<GameObject>();
                 PeopleInPlaces[i].Add(initialPeopleList[randGen]);
-                NetworkObject npcInstance = Instantiate(initialPeopleList[randGen], initialPlacesSpawnpoints[i].spawnpoints[PeopleInPlaces[i].Count-1].transform.position, Quaternion.identity).GetComponent<NetworkObject>();
+                NetworkObject npcInstance = Instantiate(initialPeopleList[randGen], initialPlacesSpawnpoints[i].spawnpoints[PeopleInPlaces[i].Count - 1].transform.position, Quaternion.identity).GetComponent<NetworkObject>();
                 npcInstance.Spawn();
                 PeopleInPlaces[i][PeopleInPlaces[i].Count - 1] = npcInstance.gameObject;
                 initialPeopleList.RemoveAt(randGen);
@@ -213,4 +217,19 @@ public class RoundSetup : NetworkBehaviour
             }
         }
     }
+    #endregion
+
+    public void SetupOver()
+    {
+        if (!IsSessionOwner)
+        {
+            return;
+        }
+        
+        GameManager.Instance.StartPreparationPhase();
+    }
+
+    
+    
+    
 }
