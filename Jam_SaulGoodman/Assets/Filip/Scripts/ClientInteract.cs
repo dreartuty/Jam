@@ -1,4 +1,5 @@
 using Unity.Netcode;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -51,50 +52,65 @@ public class ClientInteract : MonoBehaviour
         highlight.gameObject.SetActive(validNPC != null);
         if (validNPC == null) return;
         profile NPC = validNPC.GetComponent<profile>();
-        bool know = false;
-        know = true;
-
-        if (NetworkManager.Singleton.LocalClient.ClientId == 0 && NPC.CrimeKnowledge == profile.Whitness.player0)
+        PickupItem pickup = validNPC.GetComponent<PickupItem>();
+        if (NPC != null)
         {
+            bool know = false;
             know = true;
-        }
-        else if (NetworkManager.Singleton.LocalClient.ClientId == 1 && NPC.CrimeKnowledge == profile.Whitness.player1)
-        {
-            know = true;
-        }
 
-        highlight.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(validNPC.transform.position + Vector3.up * 1.5f);
-
-        bool canGiveItem = know && NPC.Profile.favouriteItem == currentItem;
-        Sprite oldSprite = highlight.sprite;
-        highlight.sprite = highlightStages[canGiveItem ? 1 : 0];
-        if (oldSprite != highlight.sprite) highlight.SetNativeSize();
-
-        // give item to the npc
-        if (doGiveItem)
-        {
-            if (canGiveItem)
+            /*if (NetworkManager.Singleton.LocalClient.ClientId == 0 && NPC.CrimeKnowledge == profile.Whitness.player0)
             {
-                currentItem = null;
-                NPC.wasGivenItem = true;
-                doInteract = true;
+                know = true;
+            }
+            else if (NetworkManager.Singleton.LocalClient.ClientId == 1 && NPC.CrimeKnowledge == profile.Whitness.player1)
+            {
+                know = true;
+            }*/
+
+            highlight.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(validNPC.transform.position + Vector3.up * 1.5f);
+
+            bool canGiveItem = know && NPC.Profile.favouriteItem == currentItem;
+            Sprite oldSprite = highlight.sprite;
+            highlight.sprite = highlightStages[canGiveItem ? 1 : 0];
+            if (oldSprite != highlight.sprite) highlight.SetNativeSize();
+
+            // give item to the npc
+            if (doGiveItem)
+            {
+                if (canGiveItem)
+                {
+                    currentItem = null;
+                    NPC.wasGivenItem = true;
+                    doInteract = true;
+                }
+            }
+
+            // interacting with the npc
+            if (doInteract)
+            {
+                if (know && (NPC.wasGivenItem || NPC.Profile.favouriteItem == null))
+                {
+                    dialogueUI.StartDialogue(NPC.Profile.satisfiedDialogue);
+                }
+                else if (know && !NPC.wasGivenItem)
+                {
+                    dialogueUI.StartDialogue(NPC.Profile.needItemDialogue);
+                }
+                else
+                {
+                    dialogueUI.StartDialogue(NPC.Profile.notKnowingDialogue);
+                }
             }
         }
-
-        // interacting with the npc
-        if (doInteract)
+        else if (pickup != null)
         {
-            if (know && (NPC.wasGivenItem || NPC.Profile.favouriteItem == null))
+            highlight.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(validNPC.transform.position + Vector3.up * 0.5f);
+            Sprite oldSprite = highlight.sprite;
+            highlight.sprite = highlightStages[0];
+            if (oldSprite != highlight.sprite) highlight.SetNativeSize();
+            if (doInteract)
             {
-                dialogueUI.StartDialogue(NPC.Profile.satisfiedDialogue);
-            }
-            else if (know && !NPC.wasGivenItem)
-            {
-                dialogueUI.StartDialogue(NPC.Profile.needItemDialogue);
-            }
-            else
-            {
-                dialogueUI.StartDialogue(NPC.Profile.notKnowingDialogue);
+                currentItem = pickup.Pickup(currentItem);
             }
         }
     }
