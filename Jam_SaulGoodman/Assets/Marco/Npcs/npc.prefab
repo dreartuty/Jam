@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 4547360882380697076}
   - component: {fileID: 56904007679447261}
   - component: {fileID: 6358283930268913202}
-  - component: {fileID: 6130597869043167552}
   - component: {fileID: -7389779485693168599}
   - component: {fileID: 5697833343197990207}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: npc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,23 +112,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6130597869043167552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668726978800417765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f520d62b479f4fd409fd52381373827c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 0}
-  portraitImage: {fileID: 0}
-  nameText: {fileID: 0}
-  dialogueText: {fileID: 0}
-  currentDialogue: {fileID: 11400000, guid: 594e88b66cfedb2458b5cf49bff58c51, type: 2}
 --- !u!114 &-7389779485693168599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2661300921
+  GlobalObjectIdHash: 1243863313
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 3
@@ -170,3 +152,4 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   Profile: {fileID: 11400000, guid: c8ca59b27e5c0fa4b893aebe71bbb68c, type: 2}
   CrimeKnowledge: 2
+  wasGivenItem: 0
