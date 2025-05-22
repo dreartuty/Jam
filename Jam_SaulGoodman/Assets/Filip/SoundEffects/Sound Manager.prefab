@@ -159,9 +159,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8526183212153728942}
-  - {fileID: 9152914081289255605}
   - {fileID: 3549957307263749853}
+  - {fileID: 9152914081289255605}
+  - {fileID: 8526183212153728942}
   - {fileID: 2695324003822324391}
   - {fileID: 7902408597561937133}
   - {fileID: 7759283123715540899}
@@ -180,9 +180,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - {fileID: 7890189320881996104}
-  - {fileID: 7151911165604266145}
   - {fileID: 7701146041739467028}
+  - {fileID: 7151911165604266145}
+  - {fileID: 7890189320881996104}
   - {fileID: 4005156934781612979}
   - {fileID: 4000495009738741435}
 --- !u!1 &4023391376964144208
@@ -230,7 +230,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 6164cb13784e67c43bc3166be4eb078e, type: 3}
   m_Resource: {fileID: 8300000, guid: 6164cb13784e67c43bc3166be4eb078e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.85
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 1
   Mute: 0
