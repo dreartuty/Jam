@@ -1,0 +1,238 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7391342225696486442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7023672720505561283}
+  - component: {fileID: 2931288330219089071}
+  - component: {fileID: 102826913604955038}
+  - component: {fileID: 2489035208516748607}
+  - component: {fileID: 5050269133927260994}
+  m_Layer: 0
+  m_Name: GameHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7023672720505561283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7391342225696486442}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2931288330219089071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7391342225696486442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1005271076
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
+--- !u!114 &102826913604955038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7391342225696486442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afcab3558bb95a7418c5e0277d3bce41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  player1Id: 0
+  player2Id: 0
+  currentState: 0
+  player1Score:
+    m_InternalValue: 0
+  player2Score:
+    m_InternalValue: 0
+  isInLobby: 1
+  InitialScore: 10
+  player1SpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  player2SpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  searchPhaseDuration: 6
+  preparationPhaseDuration: 3
+  timeRemaining: 0
+--- !u!114 &2489035208516748607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7391342225696486442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afdeb404a5966f479f7e9a47c935b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  initialPeople:
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  initialPlaces:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  initialPlacesSpawnpoints:
+  - spawnpoints:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - spawnpoints:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - spawnpoints:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - spawnpoints:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - spawnpoints:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - spawnpoints:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - spawnpoints:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  clientPrefabs:
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  - {fileID: 668726978800417765, guid: 4e3f21147c6061d4a9a02f459e029824, type: 3}
+  clients:
+  - {fileID: 0}
+  - {fileID: 0}
+  whitnessesLocationCount: 4
+  WhitnessLocation0: 
+  WhitnessLocation1: 
+  whitnessesCount:
+    min: 4
+    max: 10
+  Whitnesses0: []
+  Whitnesses1: []
+--- !u!114 &5050269133927260994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7391342225696486442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac33707f64bd931478efe7c9da78fed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  player1Bid:
+    m_InternalValue: 0
+  player2Bid:
+    m_InternalValue: 0
+  currentTurn:
+    m_InternalValue: 0
+  player1Money: 10
+  player2Money: 10

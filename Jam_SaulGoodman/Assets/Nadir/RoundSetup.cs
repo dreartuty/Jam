@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 using Unity.VisualScripting;
 
+
 public class RoundSetup : NetworkBehaviour
 {
     public static RoundSetup Instance;
@@ -225,11 +226,7 @@ public class RoundSetup : NetworkBehaviour
         {
             return;
         }
-        
+
         GameManager.Instance.StartPreparationPhase();
     }
-
-    
-    
-    
 }
