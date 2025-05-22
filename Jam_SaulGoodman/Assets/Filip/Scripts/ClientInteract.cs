@@ -3,7 +3,7 @@ using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ClientInteract : MonoBehaviour
+public class ClientInteract : NetworkBehaviour
 {
     public LayerMask interactLayer;
     public float interactRange;
@@ -17,6 +17,12 @@ public class ClientInteract : MonoBehaviour
     public Sprite[] highlightStages;
     public int evidencePoints = 0;
 
+    public override void OnNetworkSpawn()
+    {
+        GameObject canvas = GameObject.Find("Canvas");
+        itemDisplay = canvas.transform.GetChild(2).GetComponent<Image>();
+        highlight = canvas.transform.GetChild(1).GetComponent<Image>();   
+    }
     void Update()
     {
         if (currentItem != null)
