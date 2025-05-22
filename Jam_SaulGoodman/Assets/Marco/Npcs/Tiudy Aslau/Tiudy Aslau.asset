@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bc5d3f862940954c8077a7b0a3b5d47, type: 3}
-  m_Name: Tiudy
+  m_Name: Tiudy Aslau
   m_EditorClassIdentifier: 
-  IsWhitness: 0
   npcName: Tiudy
-  portrait: {fileID: 0}
-  nameColor: {r: 0, g: 0, b: 0, a: 0}
-  description: tiudy care e tiudy
-  Temper: 1
-  Reason: 10000
+  portrait: {fileID: 21300000, guid: 0147fccf65a770e48ab79cfdb2a841a7, type: 3}
+  nameColor: {r: 0.27394092, g: 0.7169812, b: 0.68696564, a: 1}
+  description: Tiudy care e Tiudy.
   favouriteItem: {fileID: 11400000, guid: ec92c66ad5e5191478dfc09445afd644, type: 2}
+  satisfiedDialogue: {fileID: 11400000, guid: 594e88b66cfedb2458b5cf49bff58c51, type: 2}
+  needItemDialogue: {fileID: 11400000, guid: 361665152bbbc0e46aa05b632d6ad087, type: 2}
+  notKnowingDialogue: {fileID: 11400000, guid: 67e94d0902aac694abd3ac4345461cc2, type: 2}

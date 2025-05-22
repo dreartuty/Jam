@@ -8,5 +8,4 @@ public class Items : ScriptableObject
     public item FavouriteItem;
     public Sprite itemIcon;
     public string description;
-    public int price;
 }

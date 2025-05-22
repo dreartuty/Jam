@@ -6,9 +6,10 @@ using TMPro;
 public class DialogueUI : MonoBehaviour
 {
     public GameObject panel;
-    public RawImage portraitImage;
+    public Image portraitImage;
     public TMP_Text nameText;
     public TMP_Text dialogueText;
+    [HideInInspector] public bool isOpened = false;
 
     public Dialogue currentDialogue; // The current Dialogue being shown
     private int currentLine; // The index of the current line to be shown
@@ -18,6 +19,7 @@ public class DialogueUI : MonoBehaviour
     {
         currentDialogue = dialogue;
         currentLine = 0;
+        isOpened = true;
         panel.SetActive(true);
         ShowLine();
     }
@@ -36,7 +38,7 @@ public class DialogueUI : MonoBehaviour
         var line = currentDialogue.lines[currentLine];
         nameText.text = currentDialogue.profile.npcName;
         nameText.color = currentDialogue.profile.nameColor;
-        portraitImage.texture = currentDialogue.profile.portrait;
+        portraitImage.sprite = currentDialogue.profile.portrait;
         dialogueText.text = line.line;
 
 
@@ -48,6 +50,7 @@ public class DialogueUI : MonoBehaviour
     {
         panel.SetActive(false);
         currentDialogue = null;
+        isOpened = false;
     }
     //This function needs to be hooked to the "Next" button in the UI
     public void OnNextButton()

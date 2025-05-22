@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d230dc285538464290cfc4ca1157554, type: 3}
+  m_Name: NeedItem
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9a92fe1b0eb297a4e9837046c5fe8131, type: 2}
+  lines:
+  - speakerName: Tammy Green
+    line: "I\u2019d tell you if I could think straight... maybe a snack would help."
+  - speakerName: Tammy Green
+    line: Got any fruit? I skipped lunch.

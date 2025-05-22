@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc5d3f862940954c8077a7b0a3b5d47, type: 3}
+  m_Name: Chloe Myers
+  m_EditorClassIdentifier: 
+  npcName: Chloe Myers
+  portrait: {fileID: 21300000, guid: 0147fccf65a770e48ab79cfdb2a841a7, type: 3}
+  nameColor: {r: 0.9622642, g: 0.24964403, b: 0.5756025, a: 1}
+  description: Likes long walks and short gossip.
+  favouriteItem: {fileID: 11400000, guid: 4bdfed6d332aec6439d3564d42ab6e56, type: 2}
+  satisfiedDialogue: {fileID: 11400000, guid: f4f7dab61638202408e07d039bbecc15, type: 2}
+  needItemDialogue: {fileID: 11400000, guid: d90843470fff87949b1a24e8de72fc07, type: 2}
+  notKnowingDialogue: {fileID: 11400000, guid: 7e9a5d56956b5844fb4ecf328635c098, type: 2}
