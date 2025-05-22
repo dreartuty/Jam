@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc5d3f862940954c8077a7b0a3b5d47, type: 3}
+  m_Name: Ella Moore
+  m_EditorClassIdentifier: 
+  npcName: Ella Moore
+  portrait: {fileID: 21300000, guid: 0147fccf65a770e48ab79cfdb2a841a7, type: 3}
+  nameColor: {r: 0.7735849, g: 0.15690638, b: 0.16233552, a: 1}
+  description: Always chewing gum, always judging.
+  favouriteItem: {fileID: 11400000, guid: 4bdfed6d332aec6439d3564d42ab6e56, type: 2}
+  satisfiedDialogue: {fileID: 11400000, guid: 161c91bbaa0cd1e40aa33274f3b85675, type: 2}
+  needItemDialogue: {fileID: 11400000, guid: ed320fa0c9c0d2c4abf2a2a5a096c326, type: 2}
+  notKnowingDialogue: {fileID: 11400000, guid: a4a533c458e33424aa814fac53d4ed16, type: 2}
