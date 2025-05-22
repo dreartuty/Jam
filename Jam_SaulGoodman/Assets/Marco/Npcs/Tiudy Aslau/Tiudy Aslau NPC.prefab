@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7389779485693168599}
   - component: {fileID: 5697833343197990207}
   m_Layer: 6
-  m_Name: npc
+  m_Name: Tiudy Aslau NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

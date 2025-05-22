@@ -15,6 +15,7 @@ public class ClientInteract : MonoBehaviour
     public KeyCode interact, giveItem, closeUI;
     public Image highlight;
     public Sprite[] highlightStages;
+    public int evidencePoints = 0;
 
     void Update()
     {
@@ -82,6 +83,7 @@ public class ClientInteract : MonoBehaviour
                     currentItem = null;
                     NPC.wasGivenItem = true;
                     doInteract = true;
+                    evidencePoints++;
                 }
             }
 

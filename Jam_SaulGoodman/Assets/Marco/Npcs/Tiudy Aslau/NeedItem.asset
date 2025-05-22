@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d230dc285538464290cfc4ca1157554, type: 3}
-  m_Name: TiudySatisfied
+  m_Name: NeedItem
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: c8ca59b27e5c0fa4b893aebe71bbb68c, type: 2}
   lines:
-  - speakerName: Tiudy
-    line: 'Ce? Ms muuuult. '
-  - speakerName: Tiudy
-    line: Why do?
+  - speakerName: Tiudy Aslau
+    line: "Nu \u0219tiu."
+  - speakerName: Tiudy Aslau
+    line: Fresh Kebab?

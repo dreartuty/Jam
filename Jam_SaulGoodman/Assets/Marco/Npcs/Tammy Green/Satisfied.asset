@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d230dc285538464290cfc4ca1157554, type: 3}
-  m_Name: TiudyNotKnowing
+  m_Name: Satisfied
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: c8ca59b27e5c0fa4b893aebe71bbb68c, type: 2}
+  profile: {fileID: 11400000, guid: 9a92fe1b0eb297a4e9837046c5fe8131, type: 2}
   lines:
-  - speakerName: Tiudy
-    line: Habarnam
-  - speakerName: Tiudy
-    line: Idonno
+  - speakerName: Tammy Green
+    line: I saw someone running behind the shop with a backpack.
+  - speakerName: Tammy Green
+    line: They stopped to tie their shoes like nothing was wrong.

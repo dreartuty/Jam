@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d230dc285538464290cfc4ca1157554, type: 3}
+  m_Name: NotKnowing
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 651fd02f9886c494ab95b5315ec1fd95, type: 2}
+  lines:
+  - speakerName: Joe Benson
+    line: "Sorry, don\u2019t know anything."
+  - speakerName: Joe Benson
+    line: Never seen anything weird, nope.

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc5d3f862940954c8077a7b0a3b5d47, type: 3}
+  m_Name: Karen Watts
+  m_EditorClassIdentifier: 
+  npcName: Karen Watts
+  portrait: {fileID: 21300000, guid: 0147fccf65a770e48ab79cfdb2a841a7, type: 3}
+  nameColor: {r: 0.5176471, g: 0.19215685, b: 0.1979381, a: 1}
+  description: Likes Fresh Kebap a lot. Still less then Tiudy.
+  favouriteItem: {fileID: 11400000, guid: 733016216ec66124a9156e858ecaeb0e, type: 2}
+  satisfiedDialogue: {fileID: 11400000, guid: f11ab7461f6dc08439ffe0174bc6a8d4, type: 2}
+  needItemDialogue: {fileID: 11400000, guid: ab9cdde749e9cbf4d95e83336e9e63c6, type: 2}
+  notKnowingDialogue: {fileID: 11400000, guid: 172666ac01e6b5f43aac8c47e5c3f90e, type: 2}

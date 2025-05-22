@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc5d3f862940954c8077a7b0a3b5d47, type: 3}
+  m_Name: Dave Cooper
+  m_EditorClassIdentifier: 
+  npcName: Dave Cooper
+  portrait: {fileID: 21300000, guid: 0147fccf65a770e48ab79cfdb2a841a7, type: 3}
+  nameColor: {r: 0.251068, g: 0.5849056, b: 0.578997, a: 1}
+  description: "He\u2019s always jittery like he drank too much... which he did."
+  favouriteItem: {fileID: 11400000, guid: 34c11ecce3c923d4eb524bde608f5243, type: 2}
+  satisfiedDialogue: {fileID: 11400000, guid: 0f125fa0e2ef1a549900f430492c0028, type: 2}
+  needItemDialogue: {fileID: 11400000, guid: 5891b8a2f01e16e40ba7f807f62be61c, type: 2}
+  notKnowingDialogue: {fileID: 11400000, guid: fbd6fa121cf4db349ae4a5316443c788, type: 2}

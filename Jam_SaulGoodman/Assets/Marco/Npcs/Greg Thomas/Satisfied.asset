@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d230dc285538464290cfc4ca1157554, type: 3}
+  m_Name: Satisfied
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 56486574492113c4a8526143216f1950, type: 2}
+  lines:
+  - speakerName: Greg Thomas
+    line: I saw someone toss a phone into the trash, then leave fast.
+  - speakerName: Greg Thomas
+    line: Looked over his shoulder the whole time.

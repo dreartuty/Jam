@@ -8,8 +8,6 @@ public class NPCProfile : ScriptableObject
     public Color nameColor = Color.white;
     [TextArea] public string description;
 
-    public float Temper;
-    public float Reason;
     public Items favouriteItem;
     public Dialogue satisfiedDialogue;
     public Dialogue needItemDialogue;
