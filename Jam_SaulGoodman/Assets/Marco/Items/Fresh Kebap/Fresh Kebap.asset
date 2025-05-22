@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Fresh Kebap
   m_EditorClassIdentifier: 
   FavouriteItem: 2
-  itemIcon: {fileID: 21300000, guid: 0147fccf65a770e48ab79cfdb2a841a7, type: 3}
+  itemIcon: {fileID: 21300000, guid: 2034ab1bee45f724895d86bf9e56776f, type: 3}
   description: a fresh kebap
-  price: 12

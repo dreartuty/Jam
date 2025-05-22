@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Apple
   m_EditorClassIdentifier: 
   FavouriteItem: 3
-  itemIcon: {fileID: 21300000, guid: 0147fccf65a770e48ab79cfdb2a841a7, type: 3}
+  itemIcon: {fileID: 21300000, guid: d83ae3e3624de8e4292cb38d1c9da569, type: 3}
   description: A apple

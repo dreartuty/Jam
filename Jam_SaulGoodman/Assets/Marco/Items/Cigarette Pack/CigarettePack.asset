@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CigarettePack
   m_EditorClassIdentifier: 
   FavouriteItem: 0
-  itemIcon: {fileID: 21300000, guid: 0147fccf65a770e48ab79cfdb2a841a7, type: 3}
+  itemIcon: {fileID: 21300000, guid: 304dcca7599c38b48b79c4e5b921d04e, type: 3}
   description: A cigarette pack
